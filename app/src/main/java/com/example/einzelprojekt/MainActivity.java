@@ -8,20 +8,41 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    TextView textView;
+    String message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void abschickenClick(View v){
+    public void abschickenClick(View v) throws InterruptedException {
+        textView = findViewById(R.id.txtMatrikelNr);
+
+        PrimeRun primeRun = new PrimeRun(textView.getText().toString());
+        new Thread(primeRun).start();
+        Thread.sleep(200);
+        message = primeRun.backValue;
+
         AlertDialog.Builder msg = new AlertDialog.Builder(this);
-        msg.setTitle("Primzahlen in deiner Matrikelnummer");
-        msg.setMessage("");
+        msg.setTitle("Auswertung");
+        msg.setMessage(message + "\n\n" + "Deine Matrikelnummer entält folgende Primzahl/en:" + "\n" + primeNumbers(textView.getText().toString()));
         msg.setCancelable(true);
 
         AlertDialog msgDialog = msg.create();
         msgDialog.show();
     }
+
+    public String primeNumbers(String matrikelnummer){
+        String primeNumbers = "";
+        char[] matrikelnumber = matrikelnummer.toCharArray();
+        for (int i = 0; i < matrikelnumber.length; i++) {
+            if(matrikelnumber[i]==50||matrikelnumber[i]==51||matrikelnumber[i]==55||matrikelnumber[i]==57){
+                primeNumbers = primeNumbers.concat(String.valueOf(matrikelnumber[i]));
+            }
+        }
+        return primeNumbers;
+    }
+
 
 }
