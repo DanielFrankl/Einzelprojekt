@@ -21,9 +21,6 @@ public class TCPServer {
 
             clientMtrklNr = inFromClient.read();
 
-
-
-
             outToClient.writeByte(clientMtrklNr);
         }
     }
