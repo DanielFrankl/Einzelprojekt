@@ -26,12 +26,23 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder msg = new AlertDialog.Builder(this);
         msg.setTitle("Auswertung");
-        msg.setMessage(message + "\n\n" + "Deine Matrikelnummer entält folgende Primzahl/en:" + "\n" + primeNumbers(textView.getText().toString()));
+        msg.setMessage(message);
         msg.setCancelable(true);
 
         AlertDialog msgDialog = msg.create();
         msgDialog.show();
     }
+
+    public void berechnungClick(View v) {
+        AlertDialog.Builder msg = new AlertDialog.Builder(this);
+        msg.setTitle("Deine Matrikelnummer entält folgende Primzahl/en:");
+        msg.setMessage(primeNumbers(textView.getText().toString()));
+        msg.setCancelable(true);
+
+        AlertDialog msgDialog = msg.create();
+        msgDialog.show();
+    }
+
 
     public String primeNumbers(String matrikelnummer){
         String primeNumbers = "";
