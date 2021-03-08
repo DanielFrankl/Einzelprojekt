@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void berechnungClick(View v) {
+        textView = findViewById(R.id.txtMatrikelNr);
+
         AlertDialog.Builder msg = new AlertDialog.Builder(this);
         msg.setTitle("Deine Matrikelnummer entält folgende Primzahl/en:");
         msg.setMessage(primeNumbers(textView.getText().toString()));
