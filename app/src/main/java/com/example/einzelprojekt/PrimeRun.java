@@ -9,12 +9,13 @@ public class PrimeRun implements Runnable {
     String matrikelnummer;
     String backValue;
 
-    PrimeRun(String matrikelnummer){
+    PrimeRun(String matrikelnummer) {
         this.matrikelnummer = matrikelnummer;
     }
+
     @Override
     public void run() {
-        try{
+        try {
             Socket clientSocket = new Socket("se2-isys.aau.at", 53212);
 
             DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
@@ -26,7 +27,7 @@ public class PrimeRun implements Runnable {
             backValue = inFromServer.readLine();
 
             clientSocket.close();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

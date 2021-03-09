@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     String message;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public String primeNumbers(String matrikelnummer){
+    public String primeNumbers(String matrikelnummer) {
         String primeNumbers = "";
         char[] matrikelnumber = matrikelnummer.toCharArray();
         for (int i = 0; i < matrikelnumber.length; i++) {
-            if(matrikelnumber[i]==50||matrikelnumber[i]==51||matrikelnumber[i]==55||matrikelnumber[i]==57){
+            if (matrikelnumber[i] == 50 || matrikelnumber[i] == 51 || matrikelnumber[i] == 55 || matrikelnumber[i] == 57) {
                 primeNumbers = primeNumbers.concat(String.valueOf(matrikelnumber[i]));
             }
         }
