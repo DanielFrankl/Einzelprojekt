@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.txtMatrikelNr);
 
         AlertDialog.Builder msg = new AlertDialog.Builder(this);
-        msg.setTitle("Deine Matrikelnummer entält folgende Primzahl/en:");
+        msg.setTitle("Deine Matrikelnummer enthält folgende Primzahl/en:");
         msg.setMessage(primeNumbers(textView.getText().toString()));
         msg.setCancelable(true);
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         String primeNumbers = "";
         char[] matrikelnumber = matrikelnummer.toCharArray();
         for (int i = 0; i < matrikelnumber.length; i++) {
-            if (matrikelnumber[i] == 50 || matrikelnumber[i] == 51 || matrikelnumber[i] == 55 || matrikelnumber[i] == 57) {
+            if (matrikelnumber[i] == 50 || matrikelnumber[i] == 51 || matrikelnumber[i] == 55) {
                 primeNumbers = primeNumbers.concat(String.valueOf(matrikelnumber[i]));
             }
         }
