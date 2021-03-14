@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         String primeNumbers = "";
         char[] matrikelnumber = matrikelnummer.toCharArray();
         for (int i = 0; i < matrikelnumber.length; i++) {
-            if (matrikelnumber[i] == 50 || matrikelnumber[i] == 51 || matrikelnumber[i] == 55) {
+            if (matrikelnumber[i] == 50 || matrikelnumber[i] == 51 || matrikelnumber[i] == 53|| matrikelnumber[i] == 55) {
                 primeNumbers = primeNumbers.concat(String.valueOf(matrikelnumber[i]));
             }
         }
